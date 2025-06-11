@@ -25,6 +25,8 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.0",
+    "brace-expansion": "^4.0.1",
+    "cross-spawn": "^7.0.6",
     "joi": "^17.13.3",
     "pg": "^8.16.0",
     "reflect-metadata": "^0.2.2",
