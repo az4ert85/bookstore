@@ -5,6 +5,7 @@ import { validationSchema } from './config/validation.schema';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AppService } from './app.service';
         synchronize: true,
       })
     }),
+    UsersModule,
     // Інші модулі: AuthModule, BookModule, UserModule і т.д.
   ],
   controllers: [AppController],
