@@ -1,4 +1,5 @@
-import { IsDate, IsDateString, IsEmail, IsJWT, IsString, Matches, MinLength } from "class-validator";
+import { Type } from "class-transformer";
+import { IsDate, IsDateString, IsEmail, IsJWT, IsOptional, IsString, Matches, MinDate, MinLength } from "class-validator";
 
 export class CreateUserDto {
     @IsEmail()
@@ -12,10 +13,14 @@ export class CreateUserDto {
   })
   public password:string;
 
+  @IsOptional()
   @IsJWT()
-  public refreshToken:string;
+  public refreshToken?:string;
 
+  @IsOptional()
+  @Type(() => Date)
   @IsDate()
-  public expireAt:Date;
+  @MinDate(new Date())
+  public expireAt?:Date|null;
 
 }

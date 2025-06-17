@@ -40,6 +40,10 @@ export class UsersService {
     return this.repo.save(user);
   }
 
+  public updateRefreshToken(userId: number, refreshToken: string) {
+    return this.repo.update(userId, { refreshToken });
+  }
+
   public async remove(id: number):Promise<void> {
     const result = await this.repo.delete(id);
     if (result.affected === 0)
