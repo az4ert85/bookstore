@@ -1,13 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
-import * as crypto from 'crypto';
-(global as any).crypto = crypto;
+import { Logger } from '@nestjs/common';
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
   const port = configService.get<number>('port') || 3000;
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
+  Logger.log(`🚀 App is running on: http://localhost:${port}`);
 }
 bootstrap();
