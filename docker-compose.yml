@@ -4,7 +4,9 @@ services:
     container_name: bookstore_api
     restart: unless-stopped
     env_file:
-      - .env
+      - .env.docker
+    environment:
+      NODE_ENV: docker_developmentgit add 
     ports:
       - "${PORT}:${PORT}"
     depends_on:
