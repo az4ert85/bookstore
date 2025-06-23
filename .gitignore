@@ -2,6 +2,7 @@
 node_modules/
 dist/
 .env*
+!.env.schema
 *.log
 
 # Editor
