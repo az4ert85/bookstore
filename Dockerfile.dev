@@ -1,0 +1,14 @@
+FROM node:20
+
+WORKDIR /app
+
+# Копіюємо лише те, що потрібно для швидшого build
+COPY package*.json ./
+
+RUN npm install
+
+# Копіюємо весь проєкт
+COPY . .
+
+# Використовуємо ts-node або start:dev
+CMD ["npm", "run", "start:dev"]

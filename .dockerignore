@@ -1,0 +1,23 @@
+# Node dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist
+coverage
+
+# Env files (вони мають задаватися через `--env-file` або `env_file:` в compose)
+.env
+.env.*
+!.env.schema
+
+# OS & editor
+.DS_Store
+*.swp
+.idea
+.vscode
+
+# Docker
+Dockerfile*
+docker-compose*.yml

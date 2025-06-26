@@ -1,0 +1,5 @@
+services:
+  api:
+    command: npm run test:e2e
+    environment:
+      NODE_ENV: test
